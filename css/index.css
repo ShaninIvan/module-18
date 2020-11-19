@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.6s;
+}
+
+.break{
+    flex-basis: 100%;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: rgb(239, 250, 252);
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(140, 235, 252) inset;
+}
+
+.messages, .errors{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.messages.show{
+    background-color: rgb(184, 252, 188);
+    animation: showBar 2s linear forwards;
+}
+
+.errors.show{
+    background-color: rgb(250, 131, 131);
+    animation: showBar 2s linear forwards;
+}
+
+@keyframes showBar{
+    0%{
+        height: 0;
+    }20%{
+        height: 70px;
+    }80%{
+        height: 70px;  
+    }100%{
+        height: 0;
+    }
+}
+
+
+h1 {
+    color: rgb(0, 145, 194);
+    font-style: italic;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+h1 a:visited, h1 a:link{
+    color: rgb(0, 145, 194);
+}
+
+.files-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 95%;
+    padding: 10px;
+    border: 2px solid lightskyblue;
+    border-radius: 10px;
+}
+
+.files-block__files-list{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.files-list__frame{
+    margin: 8px;
+    width: 200px;
+    height: 190px;
+    position: relative;
+}
+
+.files-list__frame img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.files-list__delete{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 5;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: rgba(34, 173, 253, 0.116);
+    border-radius: 3px;
+}
+
+.files-list__delete:hover{
+    background-color: rgb(248, 63, 63);
+    transform: rotate(360deg);
+    border-radius: 50%;
+}
+
+.files-list__delete:active{
+    background-color: rgb(248, 63, 63);
+    border-radius: 50%;
+}
+
+.upload-field {
+    width: 95%;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 20px;
+    border: 2px solid lightskyblue;
+    border-radius: 10px;
+}
+
+
+.upload-field__select-file input[type=file] {
+    outline: 0;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none
+}
+
+.upload-field__select-file{
+    margin-right: 30px;
+}
+
+.upload-field__select-file .label {
+    width: 120px;
+    border: 2px dashed grey;
+    border-radius: 5px;
+    display: block;
+    height: 170px;
+    padding: 1.2em;
+    transition: border 300ms ease;
+    cursor: pointer;
+    text-align: center
+}
+
+.upload-field__select-file .label i {
+    display: block;
+    font-size: 42px;
+    padding-bottom: 16px
+}
+
+.upload-field__select-file .label i, .upload-field__select-file .label .title {
+    color: grey;
+    transition: 200ms color
+}
+
+.upload-field__select-file .label:hover {
+    border: 2px solid #000
+}
+
+.upload-field__select-file .label:hover i, .example-1 .label:hover .title {
+    color: #000
+}
+
+.upload-field__preview{
+    border: 1px solid black;
+    border-radius: 5px;
+    position: relative;  
+    height: 170px;
+}
+
+#preview{
+    border-radius: 5px;
+    margin-right: 30px;
+}
+
+
+.upload-field__upload{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 170px;
+    height: 35px;
+    background-color: rgb(143, 176, 236);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.upload-field__upload:hover{
+    background-color: cornflowerblue;
+}
+
+.upload-field__limits{
+    font-style: italic;
+    color: gray;
+}
